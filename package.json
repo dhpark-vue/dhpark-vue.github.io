@@ -14,5 +14,12 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.2",
     "vite": "^5.0.10"
-  }
+  },
+  "description": "dhpark vue.js",
+  "main": "main.js",
+  "directories": {
+	  "doc": "docs"
+  },
+  "author": "dhpark-vue",
+  "license": "ISC"
 }
