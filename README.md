@@ -1,6 +1,6 @@
 # dhpark-vue.github.io
 
-This template should help get you started developing with Vue 3 in Vite.
+![image](https://github.com/dhpark-vue/dhpark-vue.github.io/assets/76561901/a4db1106-6903-4a8e-987e-fd9e10276be4)
 
 ## Recommended IDE Setup
 
