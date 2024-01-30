@@ -1,6 +1,6 @@
 {
   "projects": {
-    "default": "html5-263b9",
+    "default": "vuejs-5d3f5",
     "vue": "vuejs-5d3f5"
   },
   "targets": {},
