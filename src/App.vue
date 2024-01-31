@@ -12,7 +12,7 @@ const categories = category
 		{{ parentMessage }} - {{ index }} - {{item.message}}
 	</li>
 	
-	<li v-for="(obj in categories">
+	<li v-for="obj in categories">
 		{{obj.name}} - {{obj.image_url}} - {{obj.code}}
 	</li>
 </template>
