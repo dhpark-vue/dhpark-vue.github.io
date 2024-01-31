@@ -13,6 +13,6 @@ const categories = category
 	</li>
 	
 	<li v-for="obj in categories">
-		{{obj.name}} - {{obj.image_url}} - {{obj.code}}
+		{{obj.name}} - {{obj.code}}
 	</li>
 </template>
