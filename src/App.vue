@@ -1,18 +1,26 @@
 <script setup>
 import { ref } from 'vue'
-import category from '@/assets/category.json'
+import shoes from '@/assets/shoes.json' 
 
-const parentMessage = ref('Parent')
-const items = ref([{message: 'Foo'}, {message: 'Bar'}])
-const categories = category
+const shoe = ref(shoes)
 </script>
 
 <template>
-	<li v-for="(item, index) in items">
-		{{ parentMessage }} - {{ index }} - {{item.message}}
-	</li>
-	
-	<li v-for="obj in categories">
-		{{obj.name}} - {{obj.code}}
+	<h2>신발 재고</h2><br>
+	<hr/>
+	<li v-for="obj in shoe">
+		<span v-if="obj.brand=='ADIDAS'">
+			{{obj.id}} <br>
+			name: {{obj.name}} <br>
+			brand: {{obj.brand}} <br>
+			gender: {{obj.gender}} <br>
+			category: {{obj.category}} <br>
+			price: ${{obj.price}} <br>
+			is_in_inventory: {{obj.is_in_inventory}} <br>
+			items_left: {{obj.items_left}} <br> 
+			imageURL: {{obj.imageURL}} <br>
+			slug: {{obj.slug}} <br>
+			<hr/>
+		</span>
 	</li>
 </template>
