@@ -1,18 +1,36 @@
 <script setup>
-import { reactive, computed, ref } from 'vue'
+import { ref } from 'vue'
 
-const author = ref({
-	name: 'John Doe',
-	books: [1, 2, 3]
-})
-// ref에는 author에 value 안붙고, computed에는 붙어야 함
-const publishedBooksMessage = computed(() => { return author.value.books.length > 2 ? 'Yes' : 'No'})
+let id = 0
+const newTodo = ref('')
+const todos = ref([
+	{id: id++, issue: 'Backlog'}, 
+	{id: id++, issue: 'Todo'},
+	{id: id++, issue: 'Going Hawaii'}
+])
+
+
+
+function addTodo() {
+	todos.value.push({id: id++, issue: newTodo.value})
+}
+
+function removeTodo(todo) {
+	console.log(todo.id)
+	todo.value = todos.value.filter((t) => t !== todo)
+	todos.value.splice(todo.value, 1)
+	// [].filter(t/f)
+}
+
 </script>
-
 <template>
-	{{author.name}}
-	<p>Has published books: </p>	
-	<span>{{ author.books.length > 2 ? 'Yes' : 'No' }}</span>
-
-	<p>Has published books: {{publishedBooksMessage}}</p>
+	<form @submit.prevent="addTodo">
+		<input v-model="newTodo">
+		<button>할 일 추가</button>
+	</form>
+	<ul>
+		<li v-for="todo in todos" v-bind:key="todo">
+			{{ todo.issue }} - <button @click="removeTodo(todo)">Done</button>
+		</li>
+	</ul>
 </template>
