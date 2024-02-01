@@ -18,7 +18,7 @@ function addTodo() {
 function removeTodo(todo) {
 	console.log(todo.id)
 	todo.value = todos.value.filter((t) => t !== todo)
-	todos.value.splice(todo.value, 1)
+	todos.value.splice(todo.id, 1)
 	// [].filter(t/f)
 }
 
