@@ -10,7 +10,6 @@ async function fetchData() {
     )
     todoData.value = await res.json()
 }
-
 fetchData()
 
 function get() {
